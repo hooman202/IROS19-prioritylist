@@ -31,18 +31,15 @@
 %\usepackage{amssymb}  % assumes amsmath package installed
 
 \title{\LARGE \bf
-Priority List
+To signal or not to signal: the problem is what information should robot convey
 }
 
 
-\author{Albert Author$^{1}$ and Bernard D. Researcher$^{2}$% <-this % stops a space
-\thanks{*This work was not supported by any organization}% <-this % stops a space
-\thanks{$^{1}$Albert Author is with Faculty of Electrical Engineering, Mathematics and Computer Science,
-        University of Twente, 7500 AE Enschede, The Netherlands
-        {\tt\small albert.author@papercept.net}}%
-\thanks{$^{2}$Bernard D. Researcheris with the Department of Electrical Engineering, Wright State University,
-        Dayton, OH 45435, USA
-        {\tt\small b.d.researcher@ieee.org}}%
+\author{Hooman Hedayati$^{1}$ and Daniel Szafir$^{2}$% <-this % stops a space
+\thanks{$^{1}$Department of Computer Science, University of Colorado Boulder.
+        {\tt\small hooman.hedayati@colorado.edu}}%
+	\thanks{$^{2}$Department of Computer Science and ATLAS Institute, University of Colorado Boulder.
+		{\tt\small daniel.szafir@colorado.edu}}%
 }
 
 
@@ -57,8 +54,7 @@ Priority List
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-
-This electronic document is a �live� template. The various components of your paper [title, text, heads, etc.] are already defined on the style sheet, as illustrated by the portions given in this document.
+With the advance in technology, robots are used in more than any time. Robots are becoming an essential part of factories, homes, etc. Although some of them are behind cages, most of them are exposed to human. As a result, the number of interactions between human and robots increasing rapidly. For better interaction, both robot and human should have some fundamental knowledge about each other, this knowledge is a key to safe, appealing, etc., human-robot interaction e.g., with the signal a pedestrian knows where the self-driving car going toward. In this paper, we explore the type of information that robots should convey to the users.  We made videos of a user interacting with 3 different robots and created a "priority list" consist of possible information a user might want to know and designed a survey in which participants must select what type of information they want to know. We recruited 150 participants on Mechanical Turk and share our finding as a list of the user's priorities in the result section.
 
 \end{abstract}
 
@@ -66,109 +62,120 @@ This electronic document is a �live� template. The various components of you
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{INTRODUCTION}
 
-This template provides authors with most of the formatting specifications needed for preparing electronic versions of their papers. All standard paper components have been specified for three reasons: (1) ease of use when formatting individual papers, (2) automatic compliance to electronic requirements that facilitate the concurrent or later production of electronic products, and (3) conformity of style throughout a conference proceedings. Margins, column widths, line spacing, and type styles are built-in; examples of the type styles are provided throughout this document and are identified in italic type, within parentheses, following the example. Some components, such as multi-leveled equations, graphics, and tables are not prescribed, although the various table text styles are provided. The formatter will need to create these components, incorporating the applicable criteria that follow.
-
-\section{PROCEDURE FOR PAPER SUBMISSION}
-
-\subsection{Selecting a Template (Heading 2)}
-
-First, confirm that you have the correct template for your paper size. This template has been tailored for output on the US-letter paper size. 
-It may be used for A4 paper size if the paper size setting is suitably modified.
-
-\subsection{Maintaining the Integrity of the Specifications}
-
-The template is used to format your paper and style the text. All margins, column widths, line spaces, and text fonts are prescribed; please do not alter them. You may note peculiarities. For example, the head margin in this template measures proportionately more than is customary. This measurement and others are deliberate, using specifications that anticipate your paper as one part of the entire proceedings, and not as an independent document. Please do not revise any of the current designations
-
-\section{MATH}
-
-Before you begin to format your paper, first write and save the content as a separate text file. Keep your text and graphic files separate until after the text has been formatted and styled. Do not use hard tabs, and limit use of hard returns to only one return at the end of a paragraph. Do not add any kind of pagination anywhere in the paper. Do not number text heads-the template will do that for you.
-
-Finally, complete content and organizational editing before formatting. Please take note of the following items when proofreading spelling and grammar:
-
-\subsection{Abbreviations and Acronyms} Define abbreviations and acronyms the first time they are used in the text, even after they have been defined in the abstract. Abbreviations such as IEEE, SI, MKS, CGS, sc, dc, and rms do not have to be defined. Do not use abbreviations in the title or heads unless they are unavoidable.
-
-\subsection{Units}
-
-\begin{itemize}
-
-\item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as �3.5-inch disk drive�.
-\item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-\item Do not mix complete spellings and abbreviations of units: �Wb/m2� or �webers per square meter�, not �webers/m2�.  Spell out units when they appear in text: �. . . a few henries�, not �. . . a few H�.
-\item Use a zero before decimal points: �0.25�, not �.25�. Use �cm3�, not �cc�. (bullet list)
-
-\end{itemize}
+With the increasing needs of robots in everyday life, the number of robots around human grew dramatically, drones are one of the most favorite ones since there are affordable and they can reach places where it is difficult or impossible for a human to reach. As a result, there are more people exposed to aerial robots. There are two types of interaction happening: first, interactions between the robot and the teleoperator/supervisor. Second interactions between the robot and people who are in the same environment as the robot e.g., if an aerial robot flies over someone's house, in this case, the householders are in a type of unwanted/unplanned interaction. For better interaction with robots, users have to know the information about robots e.g., what is the robot's intention, where robot flying next etc. This information helps human to feel safer and also plan ahead. There is a large number of works that covered a variety of signals to convey different information to a user \cite{cha2018survey} e.g., gaze, gesture, implicit motion, sound, visual displays, lights. Most of them answering "how to convey information". In this paper instead, we are curious about "what information should the robot conveys". This is an important question and to best of our knowledge, this area is not explored yet. 
 
 
-\subsection{Equations}
+\section{survey and procedure}
+    We designed a survey with 4 sections. In the first section, participants watched two short videos, each approximately 30 seconds in duration. Both videos depicted a user completing a pick-and-place task while sharing an environment with an aerial robot (Figure \ref{fig:task}). There are two tables in the environment. One table contains the user instructions and two boxes, while the other table contains various wooden blocks with associated numbers. The instructions required the user to follow a sequence of steps in which they selected a specified block from one table and placed it in one of the boxes in the other table (e.g., "1. The yellow pyramid with number 15 should go in Box A"). 
+    
+    In both videos, the robot acted as a supervisor, which meant that it occasionally flew over the tables and checked the current status of the task (e.g., how many objects were in a box or whether objects were placed in the correct box). In the first video, the robot was on the opposite side of the table and completely isolated from the user (Figure \ref{fig:task} top left). However, in the second video, the robot flew on the same side of the table as the user and thus at times was in the way of the path that the user tried to take (Figure \ref{fig:task} top right). Our goal in designing these two videos was to highlight scenarios in which users may simply coexist in shared environments with drones (i.e., bystander interaction) as well as scenarios requiring more direct interaction (e.g., to resolve right-of-way issues) as the information that users desire from the robot may depend on the amount and type of interaction. %We designed the videos to mimic two scenarios, in the first one the user and aerial robot are just in the same space there is not any interaction between them, but at the same time there couple of question that the user might want to know about the robot. In the second video, there is actually an interaction between them, the robot is on the way of the user and in this case.
+    
+    \begin{figure*}[h]
+    \includegraphics[width=\textwidth,height=15cm]{task.jpg}
+    \caption{Top left: The robot doing a supervisory task. Top right: The robot intentionally interferes with the path the user is taking. Bottom: Pick and place task that the user is performing in the videos.}
+    \label{fig:task}
+    \end{figure*}
+    
+    After watching the videos (participants could re-watch videos at anytime of the survey), participants ranked 22 items, each of which corresponded to some sort of information that the robot might convey, in order of how important the participant perceived this information to be were they to interact with a robot as in the videos they had just watched. These items were drawn from a list of possible information that users might want to know from the robot created by reviewing prior HRI literature and a series of brainstorming sessions with expert roboticists with at least 5 years of experience (table \ref{table:list} in appendix A). 
+    
+    We can roughly categorize the items in 3 major groups. First, several items correspond to various information the robot might convey about itself, such as ``The robot conveying whether or not its camera is recording'' or ``The robot conveying when and in what direction robot would move next'' etc. The second group represents information that the robot might convey about the task it is doing, for example ``The robot conveying a list of successfully/unsuccessfully completed tasks (task history)'' or ``The robot conveying whether or not any faults/errors are detected (e.g., electric circuits damaged, payloads/sensors not mounted correctly, etc.).'' Finally, the third group corresponds with information related to whether it is safe and/or appropriate for human interaction, such as ``The robot conveying whether or not it is safe to get close to it'' or ``The robot conveying whether or not it currently knows where you are.'' For each participant, the list of items was presented to participants randomized in order to reduce the potential for initial placement bias. Participants were tasked with re-ordering the list of items in order of their perceived priority. 
+    
+    In the next section, participants were asked to provide a 1--7 Likert-type rating regarding their perceived importance for each item they ranked in the previous section. Here 1 was defined as ``not important'' and 7 was defined as ``very important.'' This section of the survey served two primary purposes. First, this section helped provide supplementary information on perceptions of absolute importance to contextualize the information on relative importance from the previous section (e.g., even items ordered near the end might be perceived as highly important by participants). Second, these questions provided a validation method for the items in the previous section (i.e., items ranked lower in the prior section should also receive an equal or lower score in this section). This validation helped us identify and control for the quality of participant responses. %Although it might seem like an unnecessary and redundant question, it is really important as a validation method. Using ranking question with more than 5 items is not suggested as people might not remember all the items in the list. In these cases the first and the last couple of items in the ranking are reliable, but the data in the middle might be noisy as a result not remembering the whole list. Since our list for ranking has more than 5 items, we used the second question for validation. The answers to the ranking question should have the same trend as the second question does. As an example, if the first item on the ranking should have higher or at least the equal as compare to the last item in the ranking answer. This help to remove the answers which are not consistent.
 
-The equations are an exception to the prescribed specifications of this template. You will need to determine whether or not your equation should be typed using either the Times New Roman or the Symbol font (please no other font). To create multileveled equations, it may be necessary to treat the equation as a graphic and insert it into the text after your paper is styled. Number equations consecutively. Equation numbers, within parentheses, are to position flush right, as in (1), using a right tab stop. To make your equations more compact, you may use the solidus ( / ), the exp function, or appropriate exponents. Italicize Roman symbols for quantities and variables, but not Greek symbols. Use a long dash rather than a hyphen for a minus sign. Punctuate equations with commas or periods when they are part of a sentence, as in
+    While we created a large sample of items corresponding to different types of information it may be useful for a robot to convey, we recognize that our list is not exhaustive and might be missing potentially critical aspects. As a result, the next section of the survey provided participants with open-ended questions where participants could suggest any other information they think would be helpful to know about the robot or useful for the robot communicate to them. For each suggestion, we also asked participants to provide a Likert-type rating of 1--7 regarding how important they believe this suggested information might be. Each participant had the option to provide and rate 3 new suggestions. %The question asked to give us a better understanding of what a user wants and how important is that feature for that user. 
 
-$$
-\alpha + \beta = \chi \eqno{(1)}
-$$
+    In the last section of the survey, we collected demographic information regarding age, gender, education and the level of familiarity of participants with robots in general. We also included a question about obvious features in the two videos, in this case we asked the number of boxes on the table in order to ensure that participants actually watched the videos.
 
-Note that the equation is centered using a center tab stop. Be sure that the symbols in your equation have been defined before or immediately following the equation. Use �(1)�, not �Eq. (1)� or �equation (1)�, except at the beginning of a sentence: �Equation (1) is . . .�
+    With IRB approval we deployed the survey on Amazon Mechanical Turk and collected responses from 50 participants. After initial validation analysis, we removed data from 2 participants who didn't pass the video sanity check and 11 participants with inconsistencies across the ranking and rating sections. %Which mean their first item in ranking question has a lower likert score in the second question than their last item in the ranking. e.g., one participant's first rank is "The robot conveying whether or not there is a problem with the engines/motors." with 4 as a score, and the last item in the ranking is  "The robot conveying the current time and date." with 6 as a score. 
+    As a result, we ended up with 39 responses for full analysis.
 
-\subsection{Some Common Mistakes}
-\begin{itemize}
+\section{result and finding}
 
+    Among valid responses,10 participants identified themselves as female while 27 identified as male. Average participant age was 33.2 (SD = 8.4), with a range of 22 - 59. On a seven-point scale, participants reported a moderate prior familiarity with both aerial robots (M = 4.0, SD = 1.4). For each item on the priority list, the average score of responses calculated with a range of 7.9 - 16.8. In which, 1 means it's on user's top choice and 22 means the item is user's last choice. \textbf{(HH: I copied it from the previous section, I think at some point of time we should address that issue and answer to it )} Using ranking question with more than 5 items is not suggested as people might not remember all the items in the list. In these cases the first and the last couple of items in the ranking are reliable, but the data in the middle might be noisy as a result not remembering the whole list. The average scores sorted. While the difference between the two consecutive item's score is almost continuous (M=0.32), two gaps were observed. From the 6th item to 7th, which the difference is 0.97 and between 19th and 20th which the difference is 1.79. We believe these two gaps dived the most important information and also the least important information as follow:
 
-\item The word �data� is plural, not singular.
-\item The subscript for the permeability of vacuum ?0, and other common scientific constants, is zero with subscript formatting, not a lowercase letter �o�.
-\item In American English, commas, semi-/colons, periods, question and exclamation marks are located within quotation marks only when a complete thought or name is cited, such as a title or full quotation. When quotation marks are used, instead of a bold or italic typeface, to highlight a word or phrase, punctuation should appear outside of the quotation marks. A parenthetical phrase or statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within the parentheses.)
-\item A graph within a graph is an �inset�, not an �insert�. The word alternatively is preferred to the word �alternately� (unless you really mean something that alternates).
-\item Do not use the word �essentially� to mean �approximately� or �effectively�.
-\item In your paper title, if the words �that uses� can accurately replace the word �using�, capitalize the �u�; if not, keep using lower-cased.
-\item Be aware of the different meanings of the homophones �affect� and �effect�, �complement� and �compliment�, �discreet� and �discrete�, �principal� and �principle�.
-\item Do not confuse �imply� and �infer�.
-\item The prefix �non� is not a word; it should be joined to the word it modifies, usually without a hyphen.
-\item There is no period after the �et� in the Latin abbreviation �et al.�.
-\item The abbreviation �i.e.� means �that is�, and the abbreviation �e.g.� means �for example�.
-
-\end{itemize}
-
-
-\section{USING THE TEMPLATE}
-
-Use this sample document as your LaTeX source file to create your document. Save this file as {\bf root.tex}. You have to make sure to use the cls file that came with this distribution. If you use a different style file, you cannot expect to get required margins. Note also that when you are creating your out PDF file, the source file is only part of the equation. {\it Your \TeX\ $\rightarrow$ PDF filter determines the output file size. Even if you make all the specifications to output a letter file in the source - if your filter is set to produce A4, you will only get A4 output. }
-
-It is impossible to account for all possible situation, one would encounter using \TeX. If you are using multiple \TeX\ files you must make sure that the ``MAIN`` source file is called root.tex - this is particularly important if your conference is using PaperPlaza's built in \TeX\ to PDF conversion tool.
-
-\subsection{Headings, etc}
-
-Text heads organize the topics on a relational, hierarchical basis. For example, the paper title is the primary text head because all subsequent material relates and elaborates on this one topic. If there are two or more sub-topics, the next level head (uppercase Roman numerals) should be used and, conversely, if there are not at least two sub-topics, then no subheads should be introduced. Styles named �Heading 1�, �Heading 2�, �Heading 3�, and �Heading 4� are prescribed.
-
-\subsection{Figures and Tables}
-
-Positioning Figures and Tables: Place figures and tables at the top and bottom of columns. Avoid placing them in the middle of columns. Large figures and tables may span across both columns. Figure captions should be below the figures; table heads should appear above the tables. Insert figures and tables after they are cited in the text. Use the abbreviation �Fig. 1�, even at the beginning of a sentence.
-
-\begin{table}[h]
-\caption{An Example of a Table}
-\label{table_example}
+\begin {table}[H]
 \begin{center}
-\begin{tabular}{|c||c|}
-\hline
-One & Two\\
-\hline
-Three & Four\\
+\label{table:mostImp}
+\begin{tabular}{| c | c | c | c |}
+ \hline
+ \multicolumn{4}{|c|}{Most important} \\
+ \hline
+ Rank & The robot conveying ... & Average & SD \\
+ \hline
+ 1 & whether it is currently acting autonomously or being controlled. & 7.94 & 5.51 \\
+ \hline
+ 2 & whether or not it is safe to get close to it. & 8 & 6.18 \\
+ \hline
+ 3 & what it knows about the surrounding environment & 8.29 & 5.14 \\
+ \hline
+4 & whether or not it needs assistance. & 8.58 & 4.98 \\
+ \hline
+5 & whether or not any faults/errors are detected. & 9.26 & 5.32 \\
 \hline
 \end{tabular}
+\caption{List of the most important items based on participants ranking}
 \end{center}
 \end{table}
 
+\begin {table}[H]
+\begin{center}
+\label{table:leastImp}
 
-   \begin{figure}[thpb]
-      \centering
-      \framebox{\parbox{3in}{We suggest that you use a text box to insert a graphic (which is ideally a 300 dpi TIFF or EPS file, with all fonts embedded) because, in an document, this method is somewhat more stable than directly inserting a picture.
-}}
-      %\includegraphics[scale=1.0]{figurefile}
-      \caption{Inductance of oscillation winding on amorphous
-       magnetic core versus DC bias magnetic field}
-      \label{figurelabel}
-   \end{figure}
-   
+\begin{tabular}{| c | c | c | c |}
+ \hline
+  \multicolumn{4}{|c|}{Least important} \\
+ \hline
+ Rank & The robot conveying ... & Average & SD \\
+ \hline
+ 20 & how to look up more information about the robot. & 15.55 & 6.82 \\
+ \hline
+ 21 & contact information for how to leave feedback about the robot. & 16.05  & 6.57 \\
+ \hline
+ 22 & the current time and date. & 16.88 & 5.42 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{List of the least important items based on participants ranking}
+\end{table}
 
-Figure Labels: Use 8 point Times New Roman for Figure labels. Use words rather than symbols or abbreviations when writing Figure axis labels to avoid confusing the reader. As an example, write the quantity �Magnetization�, or �Magnetization, M�, not just �M�. If including units in the label, present them within parentheses. Do not label axes only with units. In the example, write �Magnetization (A/m)� or �Magnetization {A[m(1)]}�, not just �A/m�. Do not label axes with a ratio of quantities and units. For example, write �Temperature (K)�, not �Temperature/K.�
+This is pretty interesting that the area which is on top users rank is not well explored. We are interested to explore those in our future work.
+
+
+
+
+For the open-ended questions, 45 answered received from 28 participants (M = 1.21). 17 participants provided a suggestion, 5 provided two suggestions and 6 participants provided 3 suggestions. After reviewing the data and removing the ones which were similar to one of the items in the priority list, we find 4 new categories. There is a set of suggestions which wanted to know about the environment in which the robot is working: 
+\begin{itemize}
+    \item  \textbf{Participant 15, importance 2:} "Rain or Water alert"
+    \item  \textbf{Participant 20, importance 5:} "Whether it is entering a restricted area."
+    \item  \textbf{Participant 15, importance 3:} "Heavy Wind alert"
+\end{itemize}
+
+
+
+The second group is the information about the safely of robot itself:
+\begin{itemize}
+    \item  \textbf{Participant 24, importance 3:} "How close the robot is from touching the floor or the ceiling"
+    \item  \textbf{Participant 4, importance 3:} "It would be useful to know where the robot will land when the battery runs out. Like a home base that the robot will return to."
+    \item  \textbf{Participant 50, importance 4:} "How new is it's technology and how well it operates."
+    \item  \textbf{Participant 33, importance 6:} "Anything that is shaking the robot due to a failing part."
+    \item  \textbf{Participant 45, importance 7:} "If the robot is on a collision course."
+\end{itemize}
+
+Third is the information related to the human centered interactions:
+\begin{itemize}
+    \item  \textbf{Participant 34, importance 6:} "What is the robot doing in relation to me? Is it guarding something, is it recording me?"
+    \item  \textbf{Participant 45, importance 5:} "How the robot perceives my actions."
+    \item  \textbf{Participant 38, importance 7:} "if it can react to my questions or concerns"
+    \item  \textbf{Participant 45, importance 7:} "If the robot is friendly or hostile."
+\end{itemize}
+
+Finally there is group that wants to know about the teleoperator
+\begin{itemize}
+    \item  \textbf{Participant 36, importance 4:} "If not autonomous, how far away is the person controlling the robot?"
+    \item  \textbf{Participant 35, importance 4:} "Last operator name."
+    \item  \textbf{Participant 4, importance 5:} "If it is controlled by a person it would be useful to know the age and gender of the person controlling it."
+\end{itemize}
+
 
 \section{CONCLUSIONS}
 
@@ -191,52 +198,75 @@ A conclusion section is not required. Although a conclusion may review the main 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{APPENDIX}
-
-Appendixes should appear before the acknowledgment.
+\begin {table}[h]
+\begin{center}
+\begin{tabular}{| c | l |}
+ \hline
+ \multicolumn{2}{|c|}{List of all items} \\
+ \hline
+ Rank & The robot conveying ... \\
+ \hline
+1 & whether it is currently acting autonomously or being controlled by a person.\\
+\hline
+2 &  whether or not it is safe to get close to it.\\
+\hline
+3 &  what it knows about the surrounding environment (i.e., the objects and people it can sense).\\
+\hline
+4 &  whether or not it needs assistance.\\
+\hline
+5 &  whether or not any faults/errors are detected (e.g., electric circuits damaged, etc).\\
+\hline
+6 &  whether or not its camera is recording.\\
+\hline
+7 &  when and in what direction robot would move next.\\
+\hline
+8 &  its battery life remaining in time (hours/minutes/seconds).\\
+\hline
+9 &  whether or not there is a problem with the engines/motors.\\
+\hline
+10 &  whether or not it currently knows where you are.\\
+\hline
+11 &  its current task progress (as a percentage of the whole task).\\
+\hline
+12 &  its wireless signal strength.\\
+\hline
+13 &  when it will change its altitude.\\
+\hline
+14 &  a list/schedule of upcoming/planned tasks (task queue).\\
+\hline
+15 &  the name of its current task along with a short description.\\
+\hline
+16 &  a list of successfully/unsuccessfully completed tasks (task history).\\
+\hline
+17 &  its remaining battery life as a percentage.\\
+\hline
+18 &  its most recent maintenance report (e.g., last time propeller was changed).\\
+\hline
+19 &  its total flight duration (from takeoff to the current moment).\\
+\hline
+20 &  how to look up more information about the robot (e.g., where to find a manual).\\
+\hline
+21 &  contact information for how to leave feedback about the robot.\\
+\hline
+22 &  the current time and date.\\
+\hline
+\end{tabular}
+\end{center}
+\caption{List of all the items to rank in the survey}
+\label{table:list}
+\end{table}
 
 \section*{ACKNOWLEDGMENT}
-
-The preferred spelling of the word �acknowledgment� in America is without an �e� after the �g�. Avoid the stilted expression, �One of us (R. B. G.) thanks . . .�  Instead, try �R. B. G. thanks�. Put sponsor acknowledgments in the unnumbered footnote on the first page.
-
-
+This work was supported by an Early Career Faculty grant from NASA's Space Technology Research Grants Program under award NNX16AR58G.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-References are important to the reader; therefore, each citation must be complete and correct. If at all possible, references should be commonly available publications.
 
+% references for the IEEEtran.bst documentation
+% the distribution site for IEEEtran.bst
 
-
-\begin{thebibliography}{99}
-
-\bibitem{c1} G. O. Young, �Synthetic structure of industrial plastics (Book style with paper title and editor),� 	in Plastics, 2nd ed. vol. 3, J. Peters, Ed.  New York: McGraw-Hill, 1964, pp. 15�64.
-\bibitem{c2} W.-K. Chen, Linear Networks and Systems (Book style).	Belmont, CA: Wadsworth, 1993, pp. 123�135.
-\bibitem{c3} H. Poor, An Introduction to Signal Detection and Estimation.   New York: Springer-Verlag, 1985, ch. 4.
-\bibitem{c4} B. Smith, �An approach to graphs of linear forms (Unpublished work style),� unpublished.
-\bibitem{c5} E. H. Miller, �A note on reflector arrays (Periodical style�Accepted for publication),� IEEE Trans. Antennas Propagat., to be publised.
-\bibitem{c6} J. Wang, �Fundamentals of erbium-doped fiber amplifiers arrays (Periodical style�Submitted for publication),� IEEE J. Quantum Electron., submitted for publication.
-\bibitem{c7} C. J. Kaufman, Rocky Mountain Research Lab., Boulder, CO, private communication, May 1995.
-\bibitem{c8} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, �Electron spectroscopy studies on magneto-optical media and plastic substrate interfaces(Translation Journals style),� IEEE Transl. J. Magn.Jpn., vol. 2, Aug. 1987, pp. 740�741 [Dig. 9th Annu. Conf. Magnetics Japan, 1982, p. 301].
-\bibitem{c9} M. Young, The Techincal Writers Handbook.  Mill Valley, CA: University Science, 1989.
-\bibitem{c10} J. U. Duncombe, �Infrared navigation�Part I: An assessment of feasibility (Periodical style),� IEEE Trans. Electron Devices, vol. ED-11, pp. 34�39, Jan. 1959.
-\bibitem{c11} S. Chen, B. Mulgrew, and P. M. Grant, �A clustering technique for digital communications channel equalization using radial basis function networks,� IEEE Trans. Neural Networks, vol. 4, pp. 570�578, July 1993.
-\bibitem{c12} R. W. Lucky, �Automatic equalization for digital communication,� Bell Syst. Tech. J., vol. 44, no. 4, pp. 547�588, Apr. 1965.
-\bibitem{c13} S. P. Bingulac, �On the compatibility of adaptive controllers (Published Conference Proceedings style),� in Proc. 4th Annu. Allerton Conf. Circuits and Systems Theory, New York, 1994, pp. 8�16.
-\bibitem{c14} G. R. Faulhaber, �Design of service systems with priority reservation,� in Conf. Rec. 1995 IEEE Int. Conf. Communications, pp. 3�8.
-\bibitem{c15} W. D. Doyle, �Magnetization reversal in films with biaxial anisotropy,� in 1987 Proc. INTERMAG Conf., pp. 2.2-1�2.2-6.
-\bibitem{c16} G. W. Juette and L. E. Zeffanella, �Radio noise currents n short sections on bundle conductors (Presented Conference Paper style),� presented at the IEEE Summer power Meeting, Dallas, TX, June 22�27, 1990, Paper 90 SM 690-0 PWRS.
-\bibitem{c17} J. G. Kreifeldt, �An analysis of surface-detected EMG as an amplitude-modulated noise,� presented at the 1989 Int. Conf. Medicine and Biological Engineering, Chicago, IL.
-\bibitem{c18} J. Williams, �Narrow-band analyzer (Thesis or Dissertation style),� Ph.D. dissertation, Dept. Elect. Eng., Harvard Univ., Cambridge, MA, 1993. 
-\bibitem{c19} N. Kawasaki, �Parametric study of thermal and chemical nonequilibrium nozzle flow,� M.S. thesis, Dept. Electron. Eng., Osaka Univ., Osaka, Japan, 1993.
-\bibitem{c20} J. P. Wilkinson, �Nonlinear resonant circuit devices (Patent style),� U.S. Patent 3 624 12, July 16, 1990. 
-
-
-
-
-
-
-\end{thebibliography}
-
-
+%bibliographystyle{ACM-Reference-Format}
+%bibliography{sample-base}
 
 
 \end{document}
